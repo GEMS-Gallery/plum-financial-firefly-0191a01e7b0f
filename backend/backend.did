@@ -1,0 +1,21 @@
+type Result_1 = 
+ variant {
+   err: text;
+   ok: nat;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok;
+ };
+type Item = 
+ record {
+   icon: opt text;
+   id: nat;
+   name: text;
+ };
+service : {
+  addItem: (text, opt text) -> (Result_1);
+  getItems: () -> (vec Item) query;
+  removeItem: (nat) -> (Result);
+}
